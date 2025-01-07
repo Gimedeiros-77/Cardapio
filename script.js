@@ -8,6 +8,8 @@ const closeModalBtn = document.getElementById("close-modal-btn")
 const cartCounter = document.getElementById("cart-count")
 const addressInput = document.getElementById("address")
 const addressWarn = document.getElementById("address-warn")
+const toggleButton = document.getElementById("toggle-dark-mode")
+const body  = document.body
 
 let cart = [];
 
@@ -194,3 +196,19 @@ if(isOpen){
     spanItem.classList.add("bg-red-500")
     spanItem.classList.remove("bg-green-600")
 }
+
+if(localStorage.getItem('darkMode') === 'enable'){
+    body.classList.add('dark');
+    toggleButton.textContent = "Ativar Modo Claro"
+}
+
+toggleButton.addEventListener ('click' , () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')){
+        localStorage.setItem('darkMode' , 'enabled');
+        toggleButton.textContent = "Ativar modo claro";
+    } else{
+        localStorage.setItem('darkMode' , 'disabled');
+        toggleButton.textContent = 'Ativar modo escuro';
+    }
+});

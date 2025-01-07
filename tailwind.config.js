@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./**/*.{html,js}"],
+  darkMode: 'class',
   theme: {
     fontFamily:{
       'sans': ['Roboto','sans-serif']
