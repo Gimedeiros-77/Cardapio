@@ -48,7 +48,11 @@ function addToCart(name, price){
     const existingItem = cart.find(item => item.name === name)
     if(existingItem){
         //se o item existir aumenta apenas a quantidade +1
-        existingItem.quantity +=1;
+        existingItem.quantity +=1; 
+        cart.quantity+=1;
+        cart.push({
+            quantity:+=1;
+        })
         
     }else{
         cart.push({
